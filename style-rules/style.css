@@ -1,0 +1,62 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic';
+
+body
+{
+	max-width: 60em;
+	padding: 0 1em;
+	margin: 1em auto 2em;
+	
+	font: 16px/1 "Open Sans", sans-serif;
+	
+	color: #373D49;
+	background: white;
+}
+
+p
+{
+	line-height: 1.5;
+}
+
+h2
+{
+	margin-top: 2em;
+}
+
+li > ul,
+li > ol
+{
+	margin-bottom: 1.5em;
+}
+
+li
+{
+	margin: 0 0 0.5em;
+	
+	line-height: 1.5;
+}
+
+code,
+pre
+{
+	font-family: Consolas, monospace;
+	line-height: 1.5;
+	tab-size: 4;
+	-moz-tab-size: 4;
+}
+
+pre
+{
+	padding: 0.5em 1em;
+	
+	background: linear-gradient(to bottom,#fff 0,#fff 1.5em,#f5f7fa 1.5em,#f5f7fa 3em);
+	background-origin: content-box;
+	background-size: 100% 3em;
+	
+	border: 1px solid #D3DAEA;
+	border-radius: 4px;
+}
+
+span.nowrap
+{
+	white-space: nowrap;
+}

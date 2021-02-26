@@ -1,0 +1,34 @@
+{
+	"env": {
+		"es6": true,
+		"browser": true,
+		"commonjs": true,
+		"es2021": true
+	},
+	"extends": "htmlacademy/es6",
+	"parserOptions": {
+		"ecmaVersion": 2021,
+		"sourceType": "module"
+	},
+	"rules": {
+		"no-trailing-spaces": ["error", {"skipBlankLines": true }],
+		"indent": 
+		[
+			"error", 
+			"tab", 
+			{
+				"SwitchCase": 1,
+				"CallExpression": {"arguments": 1}
+			}
+		],
+		"space-in-parens": ["error", "always", {"exceptions": ["empty"]}],
+		"no-multiple-empty-lines": 
+		[
+			"error", 
+			{"max": 1, "maxEOF": 0, "maxBOF": 0}
+		],
+		"brace-style": ["error", "allman", {"allowSingleLine": true}],
+		"no-multi-spaces": "error",
+		"sort-imports": "error"
+	}
+}

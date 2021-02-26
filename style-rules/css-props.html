@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru" data-lt-installed="true"><head>
+	<meta charset="utf-8">
+	<title>Оформление кода CSS — свойства и значения</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<h1>Правила оформления свойств в файлах CSS</h1>
+	<h2>Общие правила</h2>
+	<ul>
+		<li>Координаты и им подобные значения записываются в порядке x, y, z, сверху-вниз, слева-направо.</li>
+		<li>Стороны записываются по часовой стрелки начиная от верха: top, right, bottom, left.</li>
+		<li>Свойства, которые имеют заданный порядок в сокращённой форме, в подробной располагаются в этом же порядке.</li>
+		<li>Для нулевых значений размерность не указывается (не «0px», а «0», кроме случаев, где это необходимо, например «0s»).</li>
+		<li>Для дробных чисел ведущий ноль следует всегда писать, так как это очевиднее для восприятия (не «.5em», а «0.5em»).</li>
+		<li>Где возможно, позиция записывается словами (не «50% 0», а «center top»).</li>
+		<li>Для line-height размерность не указывается, если он выставляется относительно текста.</li>
+		<li>При указании шрифта всегда должно быть указано его семейство («"Arial", <span class="nowrap">sans‐serif</span>»).</li>
+		<li>Крайне нежелательно прописывать вручную свойства с&nbsp;вендорными префиксами&nbsp;— лучше оставить это на&nbsp;обработку препроцессорам.</li>
+		<li>Модификатор «important» никогда не должен использоваться.</li>
+	</ul>
+	<h2>Порядок свойств</h2>
+	<p>
+		Блоки разделяются пустой строкой. Комментарий с названием блока не требуется.
+	</p>
+	<pre>
+		<em>/* Позиционирование */</em>
+		<strong>position:</strong> absolute;
+		<strong>top:</strong> 0;
+		<strong>right:</strong> 0;
+		<strong>bottom:</strong> 0;
+		<strong>left:</strong> 0;
+		<strong>z-index:</strong> 1;
+
+		<em>/* Форматирование блока */</em>
+		<strong>display:</strong> block;
+		<strong>flex-flow:</strong> row wrap;
+		<strong>flex-direction:</strong> row;
+		<strong>flex-wrap:</strong> wrap;
+		<strong>justify-content:</strong> flex-start;
+		<strong>align-items:</strong> stretch;
+		<strong>align-content:</strong> stretch;
+		<strong>align-self:</strong> auto;
+		<strong>order:</strong> 0;
+		<strong>float:</strong> left;
+		<strong>shape-outside:</strong> url("images/shape.png");
+		<strong>shape-image-threshold:</strong> 0.5;
+		<strong>shape-margin:</strong> 10px;
+		<strong>clear:</strong> both;
+		<strong>box-decoration-break:</strong> clone;
+		<strong>overflow:</strong> hidden;
+		<strong>overflow-x:</strong> hidden;
+		<strong>overflow-y:</strong> hidden;
+		<strong>clip:</strong> rect(0, 0, 10px, 10px);
+		<strong>clip-path:</strong> url("images/resources.svg#clip1");
+		<strong>mask:</strong> url("images/resources.svg#mask1");
+		<strong>mask-type:</strong> luminance;
+		<strong>visibility:</strong> visible;
+
+		<em>/* Макет (размеры блока) */</em>
+		<strong>box-sizing:</strong> border-box;
+		<strong>flex:</strong> 1 1 20%;
+		<strong>flex-grow:</strong> 1;
+		<strong>flex-shrink:</strong> 1;
+		<strong>flex-basis:</strong> 20%;
+		<strong>width:</strong> auto;
+		<strong>min-width:</strong> 0;
+		<strong>max-width:</strong> none;
+		<strong>height:</strong> auto;
+		<strong>min-height:</strong> 0;
+		<strong>max-height:</strong> none;
+		<strong>padding:</strong> 0 0 0 0;
+		<strong>padding-top:</strong> 0;
+		<strong>padding-right:</strong> 0;
+		<strong>padding-bottom:</strong> 0;
+		<strong>padding-left:</strong> 0;
+		<strong>margin:</strong> 0 0 0 0;
+		<strong>margin-top:</strong> 0;
+		<strong>margin-right:</strong> 0;
+		<strong>margin-bottom:</strong> 0;
+		<strong>margin-left:</strong> 0;
+
+		<em>/* Шрифт и форматирование текста */</em>
+		<strong>font:</strong> italic bold 12px/2 Arial, sans-serif;
+		<strong>font-family:</strong> Arial, sans-serif;
+		<strong>font-size:</strong> 12px;
+		<strong>font-size-adjust:</strong> none;
+		<strong>font-style:</strong> italic;
+		<strong>font-stretch:</strong> condensed;
+		<strong>font-variant:</strong> small-caps;
+		<strong>font-variant-alternates:</strong> historical-forms;
+		<strong>font-variant-caps:</strong> small-caps;
+		<strong>font-variant-east-asian:</strong> normal;
+		<strong>font-variant-ligatures:</strong> contextual discretionary-ligatures common-ligatures;
+		<strong>font-variant-numeric:</strong> ordinal;
+		<strong>font-variant-position:</strong> super;
+		<strong>font-weight:</strong> bold;
+		<strong>font-kerning:</strong> auto;
+		<strong>font-synthesis:</strong> weight style;
+		<strong>font-feature-settings:</strong> normal;
+		<strong>font-language-override:</strong> "RUS";
+		<strong>line-height:</strong> 2;
+		<strong>letter-spacing:</strong> 0.05em;
+		<strong>word-spacing:</strong> normal;
+		<strong>white-space:</strong> nowrap;
+		<strong>word-break:</strong> break-all;
+		<strong>word-wrap:</strong> break-word;
+		<strong>overflow-wrap:</strong> break-word;
+		<strong>line-break:</strong> auto;
+		<strong>hyphens:</strong> manual;
+		<strong>tab-size:</strong> 4;
+		<strong>text-align:</strong> justify;
+		<strong>text-align-last:</strong> left;
+		<strong>text-decoration:</strong> underline;
+		<strong>text-decoration-line:</strong> underline;
+		<strong>text-decoration-color:</strong> red;
+		<strong>text-decoration-style:</strong> wavy;
+		<strong>text-underline-position:</strong> under;
+		<strong>text-indent:</strong> 1.5em;
+		<strong>text-overflow:</strong> ellipsis;
+		<strong>text-rendering:</strong> optimizeLegibility;
+		<strong>text-shadow:</strong> rgba(0, 0, 0, 0.5) 1px 1px 2px;
+		<strong>text-transform:</strong> uppercase;
+		<strong>text-orientation:</strong> sideways-right;
+		<strong>text-combine-upright:</strong> none;
+		<strong>direction:</strong> ltr;
+		<strong>unicode-bidi:</strong> bidi-override;
+		<strong>vertical-align:</strong> baseline;
+
+		<em>/* Списки */</em>
+		<strong>list-style:</strong> circle outside url("images/marker.gif");
+		<strong>list-style-type:</strong> circle;
+		<strong>list-style-position:</strong> outside;
+		<strong>list-style-image:</strong> url("images/marker.gif");
+
+		<em>/* Таблицы */</em>
+		<strong>border-collapse:</strong> collapse;
+		<strong>border-spacing:</strong> 7px 11px;
+		<strong>caption-side:</strong> top;
+		<strong>empty-cells:</strong> show;
+		<strong>table-layout:</strong> fixed;
+
+		<em>/* Колонки */</em>
+		<strong>columns:</strong> 2 70ex;
+		<strong>column-count:</strong> 2;
+		<strong>column-width:</strong> 70ex;
+		<strong>column-gap:</strong> 1em;
+		<strong>column-rule:</strong> thin solid #000;
+		<strong>column-rule-width:</strong> thin;
+		<strong>column-rule-style:</strong> solid;
+		<strong>column-rule-color:</strong> #000;
+		<strong>column-span:</strong> all;
+		<strong>column-fill:</strong> balance;
+
+		<em>/* Печать и страница */</em>
+		<strong>marks:</strong> crop cross;
+		<strong>bleed:</strong> 6pt;
+		<strong>orphans:</strong> 3;
+		<strong>widows:</strong> 3;
+		<strong>page-break-after:</strong> avoid;
+		<strong>page-break-before:</strong> always;
+		<strong>page-break-inside:</strong> auto;
+		<strong>break-after:</strong> avoid-page;
+		<strong>break-before:</strong> page;
+		<strong>break-inside:</strong> auto;
+
+		<em>/* Настройки контента */</em>
+		<strong>appearance:</strong> button;
+		<strong>scroll-behavior:</strong> smooth;
+		<strong>resize:</strong> vertical;
+		<strong>cursor:</strong> pointer;
+		<strong>user-select:</strong> none;
+		<strong>pointer-events:</strong> none;
+		<strong>touch-action:</strong> pan-x;
+		<strong>ime-mode:</strong> disabled;
+		<strong>image-rendering:</strong> crisp-edges;
+		<strong>image-resolution:</strong> 300dpi;
+		<strong>image-orientation:</strong> from-image;
+		<strong>object-fit:</strong> cover;
+		<strong>object-position:</strong> left top;
+		<strong>counter-reset:</strong> counter-name;
+		<strong>counter-increment:</strong> counter-name;
+		<strong>content:</strong> "Section " counter(counter-name) ": ";
+		<strong>quotes:</strong> "\00ab" "\00bb";
+		<strong>filter:</strong> grayscale(50%);
+		<strong>mix-blend-mode:</strong> normal;
+
+		<em>/* Цвета, фоны */</em>
+		<strong>color:</strong> #000;
+		<strong>opacity:</strong> .8;
+		<strong>background:</strong> url("images/bg.png") left top no-repeat scroll #fff;
+		<strong>background-image:</strong> url("images/bg.png");
+		<strong>background-position:</strong> left top;
+		<strong>background-size:</strong> 50% 50%;
+		<strong>background-repeat:</strong> no-repeat;
+		<strong>background-attachment:</strong> scroll;
+		<strong>background-origin:</strong> content-box;
+		<strong>background-clip:</strong> padding-box;
+		<strong>background-color:</strong> #fff;
+		<strong>background-blend-mode:</strong> normal;
+
+		<em>/* Границы */</em>
+		<strong>border:</strong> 1px solid #000;
+		<strong>border-width:</strong> 1px;
+		<strong>border-style:</strong> solid;
+		<strong>border-color:</strong> #000;
+		<strong>border-top:</strong> thick double #000;
+		<strong>border-top-width:</strong> thick;
+		<strong>border-top-style:</strong> double;
+		<strong>border-top-color:</strong> #000;
+		<strong>border-right:</strong> thin dotted #000;
+		<strong>border-right-…</strong>;
+		<strong>border-bottom:</strong> thin dashed #000;
+		<strong>border-bottom-…</strong>;
+		<strong>border-left:</strong> medium groove #000;
+		<strong>border-left-…</strong>;
+		<strong>border-radius:</strong> 4px 3px 6px / 2px 4px;
+		<strong>border-top-left-radius:</strong> 4px 2px;
+		<strong>border-top-right-radius:</strong> 3px 4px;
+		<strong>border-bottom-right-radius:</strong> 6px 2px;
+		<strong>border-bottom-left-radius:</strong> 3px 4px;
+		<strong>border-image:</strong> url("images/border.png") 27 27 27 27 round round;
+		<strong>border-image-source:</strong> url("images/border.png");
+		<strong>border-image-slice:</strong> 27 27 27 27;
+		<strong>border-image-width:</strong> 10px;
+		<strong>border-image-outset:</strong> 5px;
+		<strong>border-image-repeat:</strong> round round;
+		<strong>outline:</strong> 1px solid #f00;
+		<strong>outline-width:</strong> 1px;
+		<strong>outline-style:</strong> solid;
+		<strong>outline-color:</strong> #f00;
+		<strong>outline-offset:</strong> 10px;
+		<strong>box-shadow:</strong> inset 5px 5px 4px 2px rgba(0, 0, 0, 0.5);
+
+		<em>/* Преобразования */</em>
+		<strong>transform:</strong> rotate(45deg);
+		<strong>transform-origin:</strong> center top;
+		<strong>transform-style:</strong> preserve-3d;
+		<strong>perspective:</strong> 500px;
+		<strong>perspective-origin:</strong> center top;
+		<strong>backface-visibility:</strong> hidden;
+
+		<em>/* Переходы */</em>
+		<strong>transition:</strong> opacity 2s ease 0.5s;
+		<strong>transition-property:</strong> opacity;
+		<strong>transition-duration:</strong> 2s;
+		<strong>transition-timing-function:</strong> ease;
+		<strong>transition-delay:</strong> 0.5s;
+
+		<em>/* Анимация */</em>
+		<strong>animation:</strong> mymove 5s linear 2s infinite alternate forwards paused;
+		<strong>animation-name:</strong> mymove;
+		<strong>animation-duration:</strong> 5s;
+		<strong>animation-timing-function:</strong> linear;
+		<strong>animation-delay:</strong> 2s;
+		<strong>animation-iteration-count:</strong> infinite;
+		<strong>animation-direction:</strong> alternate;
+		<strong>animation-fill-mode:</strong> forwards;
+		<strong>animation-play-state:</strong> paused;
+		<strong>will-change:</strong> auto;
+	</pre>
+
+</body>
+</html>
