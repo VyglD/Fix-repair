@@ -1,0 +1,52 @@
+body > header
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--size-desktop);
+	padding: 20px 30px;
+	margin: 0 auto;
+}
+
+body > header > img
+{
+	display: block;
+	
+	flex-shrink: 0;
+	width: 200px;
+	min-width: 200px;
+	height: 55px;
+	margin-top: 7px;
+}
+
+body > header > a
+{
+	display: flex;
+	align-items: center;
+	
+	font-size: 21px;
+	line-height: 25px;
+}
+
+body > header > a:hover
+{
+	color: var(--color-orange-0);
+}
+
+body > header > a::before
+{
+	content: "";
+	
+	display: block;
+	
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+	
+	background-image: url("../img/sprite.svg#phone");
+}

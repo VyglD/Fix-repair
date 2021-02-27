@@ -10,9 +10,9 @@ const htmlmin = require( `gulp-htmlmin` );
 const imagemin = require( `gulp-imagemin` );
 const rename = require( `gulp-rename` );
 const postcss = require( `gulp-postcss` );
-const postcssAssets = require( `postcss-assets` );
 const postcssAutoprefixer = require( `autoprefixer` );
 const postcssCSSO = require( `postcss-csso` );
+const postcssCustomProperties = require( `postcss-custom-properties` );
 const postcssImport = require( `postcss-import` );
 const postcssPresetEnv = require( `postcss-preset-env` );
 const server = require( `browser-sync` ).create();
@@ -84,12 +84,12 @@ const createSvgSprite = () =>
 			svgSprite(
 				{
 					mode:
-					{
-						stack:
 						{
-							sprite: `../sprite.svg`
-						}
-					},
+							stack:
+								{
+									sprite: `../sprite.svg`,
+								}
+						},
 				}
 			)
 		)
@@ -179,7 +179,7 @@ gulp.task(
 		const processors =
 		[
 			postcssImport,
-			postcssAssets,
+			postcssCustomProperties,
 			postcssPresetEnv,
 			postcssAutoprefixer,
 			postcssCSSO(
