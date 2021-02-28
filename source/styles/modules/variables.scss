@@ -1,6 +1,18 @@
+$size-xxl: 1720px;
+$size-xl: 1200px;
+$size-lg: 992px;
+$size-md: 768px;
+$size-sm: 576px;
+$size-xs: 320px;
+
 :root
 {
-	--size-desktop: 1720px;
+	--size-xxl: #{$size-xxl};
+	--size-xl: #{$size-xl};
+	--size-lg: #{$size-lg};
+	--size-md: #{$size-md};
+	--size-sm: #{$size-sm};
+	--size-xs: #{$size-xs};
 	
 	--color-black-0: #000000;
 	--color-white-0: #FFFFFF;

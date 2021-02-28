@@ -33,6 +33,7 @@
 		"postcss-import": "14.0.0",
 		"postcss-preset-env": "6.7.0",
 		"pre-commit": "1.2.2",
+		"precss": "4.0.0",
 		"stylelint": "13.11.0",
 		"stylelint-config-htmlacademy": "0.1.4",
 		"vinyl-buffer": "1.0.1",
@@ -41,7 +42,7 @@
 	},
 	"scripts": {
 		"editorconfig": "editorconfig-cli",
-		"stylelint": "stylelint source/styles/**/*.css --aei",
+		"stylelint": "stylelint source/styles/**/*.{scss,css} --aei",
 		"eslint": "eslint source/scripts/**/*.js",
 		"start": "gulp start",
 		"build": "gulp build --production",
@@ -55,7 +56,7 @@
 		"*.json",
 		"source/markup/**/*.html",
 		"source/scripts/**/*.js",
-		"source/styles/**/*.css",
+		"source/styles/**/*.{scss,css}",
 		"source/images/**/*.svg"
 	]
 }

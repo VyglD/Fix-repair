@@ -14,6 +14,7 @@ const postcssAutoprefixer = require( `autoprefixer` );
 const postcssCSSO = require( `postcss-csso` );
 const postcssCustomProperties = require( `postcss-custom-properties` );
 const postcssImport = require( `postcss-import` );
+const postcssPrecss = require( `precss` );
 const postcssPresetEnv = require( `postcss-preset-env` );
 const server = require( `browser-sync` ).create();
 const svgSprite = require( `gulp-svg-sprite` );
@@ -179,6 +180,7 @@ gulp.task(
 		const processors =
 		[
 			postcssImport,
+			postcssPrecss,
 			postcssCustomProperties,
 			postcssPresetEnv,
 			postcssAutoprefixer,
@@ -189,7 +191,7 @@ gulp.task(
 			),
 		];
 		
-		return gulp.src( `${PATH.SRC_CSS}/index.css` )
+		return gulp.src( `${PATH.SRC_CSS}/index.scss` )
 			.pipe(
 				gulpif(
 					!isProd,
@@ -287,7 +289,7 @@ gulp.task(
 		
 		gulp.watch( `${PATH.SRC_HTML}/**/*.html` )
 			.on( `all`, gulp.series( `markup`, `refresh` ) );
-		gulp.watch( `${PATH.SRC_CSS}/**/*.css` )
+		gulp.watch( `${PATH.SRC_CSS}/**/*.{scss,css}` )
 			.on( `all`, gulp.series( `styles`, `refresh` ) );
 		gulp.watch( `${PATH.SRC_JS}/**/*.js` )
 			.on( `all`, gulp.series( `scripts`, `refresh` ) );
