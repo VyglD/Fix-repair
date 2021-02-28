@@ -7,9 +7,10 @@ body
 {
 	box-sizing: border-box;
 	width: 100%;
+	min-width: var(--size-xs);
 	height: 100%;
 	min-height: 100vh;
-	padding: 20px;
+	padding: 0;
 	margin: 0;
 	
 	font-family: "Muller", "Tahome", sans-serif;
@@ -46,6 +47,9 @@ a:disabled
 
 button
 {
+	padding: 0;
+	margin: 0;
+	
 	font-family: inherit;
 	font-size: inherit;
 	font-style: inherit;
@@ -69,8 +73,6 @@ p
 {
 	margin: 0;
 	padding: 0;
-	
-	font-family: inherit;
 }
 
 label
@@ -86,4 +88,31 @@ ul
 	margin: 0;
 	
 	list-style: none;
+}
+
+video
+{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="range"].visually-hidden,
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden
+{
+	position: absolute;
+	
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	
+	white-space: nowrap;
+	
+	border: 0;
 }

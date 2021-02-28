@@ -1,0 +1,25 @@
+$size-xxl: 1720px;
+$size-xl: 1200px;
+$size-lg: 992px;
+$size-md: 768px;
+$size-sm: 576px;
+$size-xs: 320px;
+
+:root
+{
+	--size-xxl: #{$size-xxl};
+	--size-xl: #{$size-xl};
+	--size-lg: #{$size-lg};
+	--size-md: #{$size-md};
+	--size-sm: #{$size-sm};
+	--size-xs: #{$size-xs};
+	
+	--color-black-0: #000000;
+	--color-white-0: #FFFFFF;
+	--color-orange-0: #F9572E;
+	--color-orange-1: rgba(249, 87, 46, 0.6);
+	--color-orange-2: #FF7B59;
+	--color-orange-3: rgba(249, 87, 46, 0.7);
+	--color-gray-0: #F2F2F2;
+	--color-gray-1: #EEEEEE;
+}

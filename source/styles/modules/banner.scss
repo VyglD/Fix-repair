@@ -1,0 +1,357 @@
+body > main > .banner
+{
+	--banner-content-offset: 40px;
+	--banner-padding: 20px;
+	
+	display: flex;
+	flex-direction: row;
+	
+	box-sizing: border-box;
+	width: 100%;
+	height: 100vh;
+	min-height: 480px;
+	padding: var(--banner-padding);
+}
+
+body > main > .banner > .content-wrapper
+{
+	display: flex;
+	flex-direction: column;
+	
+	box-sizing: border-box;
+	width: 50%;
+	max-width: calc((var(--size-xxl) / 2) - var(--banner-content-offset));
+	padding: 100px 30px 28px 7px;
+	margin: 0;
+	margin-left: auto;
+}
+
+body > main > .banner h2
+{
+	margin: 0;
+	margin-top: auto;
+	
+	font-size: 64px;
+	font-weight: 500;
+	line-height: 64px;
+	letter-spacing: -0.01em;
+}
+
+body > main > .banner .subtitle
+{
+	padding-left: 3px;
+	margin-top: 25px;
+	
+	font-size: 21px;
+	line-height: 30px;
+}
+
+body > main > .banner > .content-wrapper .action-button-wrapper
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	
+	padding: 0 10px 0 3px;
+	margin: 43px auto 68px 0;
+}
+
+body > main > .banner > .content-wrapper .action-button
+{
+	min-width: 260px;
+	margin-right: 31px;
+}
+
+body > main > .banner > .content-wrapper .elucidation
+{
+	margin: 15px auto 0;
+}
+
+body > main > .banner > .content-wrapper .scroll-button
+{
+	display: flex;
+	align-items: center;
+	
+	margin-top: auto;
+	margin-right: auto;
+	
+	line-height: 18px;
+	letter-spacing: -0.01px;
+	
+	color: var(--color-orange-0);
+	
+	outline: none;
+}
+
+body > main > .banner > .content-wrapper .scroll-button:focus:not(:hover)
+{
+	text-decoration: underline;
+}
+
+body > main > .banner > .content-wrapper .scroll-button:active
+{
+	opacity: 0.2;
+}
+
+body > main > .banner > .content-wrapper .scroll-button::before
+{
+	content: "";
+	
+	display: block;
+	
+	width: 61px;
+	height: 30px;
+	
+	background-image: url("../img/sprite.svg#scroll-arrows");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 41px 41px;
+}
+
+body > main > .banner > .content-wrapper .scroll-button:hover::before
+{
+	background-image: url("../img/sprite.svg#scroll-arrows-hover");
+	background-size: 29px 41px;
+}
+
+body > main > .banner > .video-wrapper
+{
+	position: relative;
+	
+	overflow: hidden;
+	
+	width: calc(50% + var(--banner-content-offset) - var(--banner-padding));
+	max-height: 100%;
+	margin: auto 0;
+	
+	background-color: var(--color-gray-1);
+}
+
+body > main > .banner > .video-wrapper::before
+{
+	content: "";
+	
+	display: block;
+	
+	padding-top: calc(920 / 940 * 100%);
+}
+
+body > main > .banner > .video-wrapper video
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+}
+
+body > main > .banner > .video-wrapper .play-button
+{
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	
+	margin: 1px 0 0 5px;
+	
+	font-size: 21px;
+	line-height: 30px;
+	
+	color: var(--color-orange-0);
+	
+	outline: none;
+	
+	transform: translate(-50%);
+}
+
+body > main > .banner > .video-wrapper .play-button:focus:not(:hover)
+{
+	text-decoration: underline;
+}
+
+body > main > .banner > .video-wrapper .play-button:active
+{
+	opacity: 0.2;
+}
+
+body > main > .banner > .video-wrapper .play-button::before
+{
+	--icon-button-size: 256px;
+	
+	content: "";
+	
+	display: block;
+	
+	width: var(--icon-button-size);
+	height: var(--icon-button-size);
+	margin: 0 4px 18px 0;
+	
+	background-image: url("../img/sprite.svg#play");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media (max-height: 650px)
+{
+	body > main > .banner h2
+	{
+		margin-top: 30px;
+		
+		font-size: 48px;
+	}
+	
+	body > main > .banner h2 br
+	{
+		display: none;
+	}
+	
+	body > main > .banner .subtitle br
+	{
+		display: none;
+	}
+	
+	body > main > .banner > .content-wrapper .action-button-wrapper
+	{
+		margin: 30px auto 0 0;
+	}
+	
+	body > main > .banner > .video-wrapper .play-button
+	{
+		top: 40%;
+	}
+	
+	body > main > .banner > .video-wrapper .play-button::before
+	{
+		--icon-button-size: 125px;
+		
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: $size-xl)
+{
+	body > main > .banner h2
+	{
+		font-size: 48px;
+		line-height: 48px;
+	}
+	
+	body > main > .banner .subtitle
+	{
+		font-size: 18px;
+		line-height: 18px;
+	}
+	
+	body > main > .banner > .content-wrapper .action-button-wrapper
+	{
+		margin: 20px 0 0;
+	}
+	
+	body > main > .banner > .video-wrapper .play-button
+	{
+		top: 40%;
+		
+		margin: 0 auto;
+	}
+	
+	body > main > .banner > .video-wrapper .play-button::before
+	{
+		--icon-button-size: 125px;
+		
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: $size-lg)
+{
+	body > main > .banner
+	{
+		flex-direction: column;
+	}
+	
+	body > main > .banner > .content-wrapper
+	{
+		width: 100%;
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	body > main > .banner h2
+	{
+		margin: 50px auto 0;
+		
+		text-align: center;
+	}
+	
+	body > main > .banner h2 br
+	{
+		display: none;
+	}
+	
+	body > main > .banner .subtitle
+	{
+		padding: 0 20px;
+		margin: 30px auto 0;
+		
+		text-align: center;
+	}
+	
+	body > main > .banner .subtitle br
+	{
+		display: none;
+	}
+	
+	body > main > .banner > .content-wrapper .action-button-wrapper
+	{
+		flex-direction: column;
+		
+		margin: 30px auto 0;
+	}
+	
+	body > main > .banner > .content-wrapper .action-button
+	{
+		margin: 0 auto;
+	}
+	
+	body > main > .banner > .content-wrapper .scroll-button
+	{
+		display: none;
+	}
+	
+	body > main > .banner > .video-wrapper
+	{
+		width: 100%;
+		margin: 0;
+	}
+}
+
+@media (max-width: $size-sm)
+{
+	body > main > .banner h2
+	{
+		font-size: 32px;
+		line-height: 32px;
+	}
+	
+	body > main > .banner .subtitle
+	{
+		font-size: 16px;
+		line-height: 16px;
+	}
+	
+	body > main > .banner > .video-wrapper .play-button
+	{
+		top: 33%;
+		
+		font-size: 16px;
+	}
+	
+	body > main > .banner > .video-wrapper .play-button::before
+	{
+		--icon-button-size: 90px;
+	}
+}

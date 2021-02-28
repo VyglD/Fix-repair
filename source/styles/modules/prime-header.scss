@@ -1,15 +1,22 @@
 body > header
 {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 2;
+	
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	
 	box-sizing: border-box;
 	width: 100%;
-	max-width: var(--size-desktop);
-	padding: 20px 30px;
-	margin: 0 auto;
+	max-width: var(--size-xxl);
+	padding: 40px 30px 20px;
+	
+	transform: translateX(-50%);
 }
 
 body > header > img
@@ -26,15 +33,31 @@ body > header > img
 body > header > a
 {
 	display: flex;
+	justify-content: flex-end;
 	align-items: center;
+	
+	min-width: var(--size-xs);
+	padding: 15px 0;
 	
 	font-size: 21px;
 	line-height: 25px;
+	
+	outline: none;
 }
 
 body > header > a:hover
 {
 	color: var(--color-orange-0);
+}
+
+body > header > a:focus:not(:hover)
+{
+	text-decoration: underline;
+}
+
+body > header > a:active
+{
+	opacity: 0.2;
 }
 
 body > header > a::before
@@ -49,4 +72,23 @@ body > header > a::before
 	margin-right: 8px;
 	
 	background-image: url("../img/sprite.svg#phone");
+}
+
+@media (max-width: $size-sm)
+{
+	body > header
+	{
+		flex-direction: column;
+		align-items: center;
+		
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	body > header > a
+	{
+		justify-content: center;
+		
+		width: 100%;
+	}
 }
