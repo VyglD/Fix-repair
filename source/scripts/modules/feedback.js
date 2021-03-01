@@ -106,7 +106,6 @@ const init
 	const emailInput = form.querySelector( `#feedback-input-email` );
 	const phoneInput = form.querySelector( `#feedback-input-phone` );
 	const submitButton = form.querySelector( `button[type="submit"]` );
-	const policy = feedback.querySelector( `.policy` );
 	
 	inputs.forEach(
 		( input ) =>
@@ -184,16 +183,6 @@ const init
 	
 	submitButton.addEventListener( `click`, onFormSubmit );
 	form.addEventListener( `submit`, onFormSubmit );
-	
-	policy.addEventListener(
-		`click`,
-		( evt ) =>
-		{
-			evt.preventDefault();
-			
-			toast.info( `Данная страница отсуствует` );
-		}
-	);
 };
 
 export
