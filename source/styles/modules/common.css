@@ -5,6 +5,8 @@ html
 
 body
 {
+	position: relative;
+	
 	box-sizing: border-box;
 	width: 100%;
 	min-width: var(--size-xs);
@@ -23,6 +25,11 @@ body
 	
 	color: var(--color-black-0);
 	background-color: var(--color-white-0);
+}
+
+main
+{
+	overflow-x: hidden;
 }
 
 img

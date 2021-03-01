@@ -1,0 +1,235 @@
+body > main > section.slider
+{
+	--slider-offset: 20px;
+	
+	position: relative;
+	
+	max-width: calc(var(--size-lg) + 2 * var(--slider-offset));
+	padding: 50px 0;
+	margin: 0 auto;
+}
+
+body > main > section.slider h2
+{
+	padding: 0 var(--slider-offset);
+	margin: 48px 0 0;
+	
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 50px;
+}
+
+body > main > section.slider > .subtitle
+{
+	padding: 0 var(--slider-offset) 0 calc(var(--slider-offset) + 4px);
+	margin: 7px 0 0;
+	
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	
+	color: var(--color-green-0);
+}
+
+body > main > section.slider > ul
+{
+	--active-slide: 0;
+	--slide-width: calc(100% - 2 * var(--slider-offset));
+	
+	display: flex;
+	
+	width: var(--slide-width);
+	padding: 0 var(--slider-offset);
+	margin-top: 53px;
+	margin-left: calc(var(--slide-width) * (-1 * var(--active-slide)));
+	
+	transition: margin-left var(--duration);
+}
+
+body > main > section.slider > ul.no-js
+{
+	display: block;
+}
+
+body > main > section.slider > ul > li
+{
+	position: relative;
+	
+	display: flex;
+	
+	flex-shrink: 0;
+	width: 100%;
+	max-width: var(--size-lg);
+	height: auto;
+	max-height: 500px;
+}
+
+body > main > section.slider > ul > li > picture
+{
+	width: auto;
+	max-width: 780px;
+	height: 100%;
+}
+
+body > main > section.slider > ul > li > picture img
+{
+	width: auto;
+	height: auto;
+}
+
+body > main > section.slider > ul > li > p.description
+{
+	flex-shrink: 0;
+	width: 150px;
+	padding: 0 20px;
+	
+	font-size: 13px;
+	line-height: 20px;
+	
+	color: var(--color-black-1);
+	opacity: 0;
+	
+	transition: opacity var(--duration);
+}
+
+body > main > section.slider > ul > li.active > p.description
+{
+	opacity: 1;
+}
+
+body > main > section.slider > ul.no-js > li > p.description
+{
+	margin-left: auto;
+	
+	opacity: 1;
+}
+
+body > main > section.slider > div.buttons-wrapper
+{
+	position: absolute;
+	right: 80px;
+	bottom: 42px;
+	
+	display: flex;
+}
+
+body > main > section.slider > div.buttons-wrapper.no-js
+{
+	display: none;
+}
+
+body > main > section.slider > div.buttons-wrapper > button
+{
+	display: block;
+	width: 50px;
+	height: 60px;
+	
+	background-image: url("../img/sprite.svg#arrow");
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	outline: none;
+}
+
+body > main > section.slider > div.buttons-wrapper > button.previous
+{
+	transform: rotate(180deg);
+}
+
+body > main > section.slider > div.buttons-wrapper > button:hover
+{
+	background-image: url("../img/sprite.svg#arrow-hover");
+	background-size: 33px 45px;
+}
+
+body > main > section.slider > div.buttons-wrapper > button:focus:not(:hover)
+{
+	opacity: 0.3;
+}
+
+body > main > section.slider > div.buttons-wrapper > button:active
+{
+	opacity: 0.1;
+}
+
+@media (max-width: $size-lg)
+{
+	body > main > section.slider
+	{
+		padding: 30px 0;
+	}
+	
+	body > main > section.slider h2
+	{
+		margin-top: 0;
+	}
+}
+
+@media (max-width: $size-md)
+{
+	body > main > section.slider h2
+	{
+		text-align: center;
+	}
+	
+	body > main > section.slider > .subtitle
+	{
+		text-align: center;
+	}
+	
+	body > main > section.slider > ul
+	{
+		width: 100%;
+		height: auto;
+		padding: 0;
+		margin-left: calc(100% * (-1 * var(--active-slide)));
+	}
+	
+	body > main > section.slider > ul > li > picture
+	{
+		height: auto;
+		margin: auto auto 0 0;
+	}
+	
+	body > main > section.slider > ul > li > p.description
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		
+		padding: 10px;
+		
+		color: var(--color-white-0);
+		background-color: var(--color-black-2);
+		
+		border-radius: 10px;
+	}
+	
+	body > main > section.slider > div.buttons-wrapper
+	{
+		right: 0;
+	}
+}
+
+@media (max-width: $size-sm)
+{
+	body > main > section.slider h2
+	{
+		font-size: 32px;
+		line-height: 32px;
+	}
+	
+	body > main > section.slider > .subtitle
+	{
+		margin-top: 20px;
+		
+		font-size: 16px;
+		line-height: 16px;
+	}
+	
+	body > main > section.slider > ul
+	{
+		margin-top: 30px;
+	}
+}
