@@ -7,14 +7,14 @@ const customClass =
 const getNextArrayIndex =
 ( currentIndex, arr ) =>
 {
-	/* eslint-disable-next-line space-in-parens*/
+	// eslint-disable-next-line space-in-parens
 	return (currentIndex + 1) % arr.length;
 };
 
 const getPreviousArrayIndex =
 ( currentIndex, arr ) =>
 {
-	/* eslint-disable-next-line space-in-parens*/
+	// eslint-disable-next-line space-in-parens
 	return (currentIndex + (arr.length - 1)) % arr.length;
 };
 

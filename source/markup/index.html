@@ -29,7 +29,9 @@
 			alt="FIX Ремонт"
 			title="FIX Ремонт"
 		/>
-		<a href="#contacts" title="Посмотреть наши контакты">Контакты</a>
+		<a href="#contacts" title="Посмотреть наши контакты" data-scroll >
+			Контакты
+		</a>
 	</header>
 	<main>
 		<h1 class="visually-hidden">
@@ -47,6 +49,7 @@
 						class="action-button"
 						href="#feedback"
 						title="Перейти к форме обратной связи"
+						data-scroll
 					>
 						Узнайте о запуске первым
 					</a>
@@ -56,6 +59,7 @@
 					class="scroll-button" 
 					href="#advantages"
 					title="Перейти к содержимому сайта"
+					data-scroll
 				>
 					Листайте вниз, <br/> чтобы ничего не упустить
 				</a>
@@ -69,7 +73,13 @@
 				>
 					<source src="video/promotion.mp4" type="video/mp4" />
 				</video>
-				<button class="play-button" type="button">Смотреть видео</button>
+				<button 
+					class="play-button"
+					type="button"
+					data-blank-status
+				>
+					Смотреть видео
+				</button>
 			</div>
 		</section>
 		<section class="advantages" id="advantages">
@@ -226,12 +236,72 @@
 					class="policy"
 					href="#blank"
 					title="Открыть политику конфиденциальности"
+					data-blank-status
 				>
 					Политика конфиденциальности
 				</a>
 			</div>
 		</section>
 	</main>
+	<footer id="contacts">
+		<ul>
+			<li>
+				<a
+					class="social"
+					href="#blank"
+					title="Наш facebook"
+					aria-label="Наш facebook"
+					data-type="facebook"
+					data-blank-status
+				>
+				</a>
+			</li>
+			<li>
+				<a
+					class="social"
+					href="#blank"
+					title="Наш VK"
+					aria-label="Наш VK"
+					data-type="vk"
+					data-blank-status
+				>
+				</a>
+			</li>
+			<li>
+				<a
+					class="social"
+					href="#blank"
+					title="Наш Instagram"
+					aria-label="Наш Instagram"
+					data-type="instagram"
+					data-blank-status
+				>
+				</a>
+			</li>
+		</ul>
+		<p class="title">Следите за нашим развитием</p>
+		<p class="subtitle">
+			Подпишитесь на наши аккаунты в соц. сетях, знакомьтесь <br/>
+			с нашими проектами и тем, что нас вдохновляет
+		</p>
+		<div class="contacts-wrapper">
+			<a class="phone" href="tel:+78129035445" title="Позвоните нам">
+				+7 (812) 903-54-45
+			</a>
+			<p class="address">
+				<span>Ул. Галерная, д 55,</span>
+				Санкт-Петербург
+			</p>
+			<a 
+				class="email"
+				href="mailto:9035445@gmail.com"
+				title="Напишите нам"
+			>
+				9035445@gmail.com
+			</a>
+		</div>
+		<p class="copyright">© FIX Ремонт, 2016</p>
+	</footer>
 	<div class="toast">
 		<p class="message">Информация</p>
 		<div class="timer"></div>
