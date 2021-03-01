@@ -1,0 +1,106 @@
+body > .toast
+{
+	--toast-padding: 20px;
+	--toast-button-width: 30px;
+	
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	
+	display: none;
+	
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 250px;
+	padding: var(--toast-padding);
+	padding-right: calc(var(--toast-padding) + var(--toast-button-width));
+	
+	opacity: 1;
+	background-color: var(--color-green-0);
+	
+	transform: translateX(-50%);
+	
+	transition: opacity var(--duration);
+}
+
+body > .toast.warning
+{
+	background-color: var(--color-orange-0);
+}
+
+body > .toast.info
+{
+	background-color: var(--color-blue-0);
+}
+
+body > .toast.visible
+{
+	display: block;
+}
+
+body > .toast > .message
+{
+	font-size: 16px;
+	line-height: 16px;
+	
+	color: var(--color-white-0);
+}
+
+body > .toast > .timer
+{
+	--timer-height: 4px;
+	
+	position: absolute;
+	bottom: calc(-1 * var(--timer-height));
+	left: 0;
+
+	width: 100%;
+	height: var(--timer-height);
+	
+	background-color: var(--color-green-0);
+}
+
+body > .toast.visible > .timer
+{
+	animation: reduce 2s linear forwards;
+}
+
+body > .toast > button
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	box-sizing: border-box;
+	width: 30px;
+	height: 100%;
+	
+	border: 1px solid var(--color-black-0);
+	outline: none;
+}
+
+body > .toast > button:hover
+{
+	opacity: 0.8;
+}
+
+body > .toast > button::after
+{
+	content: "";
+	
+	display: block;
+	
+	width: 16px;
+	height: 16px;
+	margin: 0 auto;
+	
+	background-image: url("../img/sprite.svg#cross");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+body > .toast > button:hover::after,
+body > .toast > button:focus::after
+{
+	transform: scale(0.7);
+}
