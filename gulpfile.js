@@ -23,7 +23,8 @@ const terser = require( `gulp-terser` );
 const vinylSource = require( `vinyl-source-stream` );
 const vinylBuffer = require( `vinyl-buffer` );
 
-const SRC_FOLDER = {
+const SRC_FOLDER =
+{
 	SRC: `source`,
 	MARKUP: `markup`,
 	CSS: `styles`,
@@ -32,7 +33,8 @@ const SRC_FOLDER = {
 	STATIC: `static`,
 };
 
-const BUILD_FOLDER = {
+const BUILD_FOLDER =
+{
 	BUILD: `build`,
 	CSS: `css`,
 	JS: `js`,
@@ -40,7 +42,8 @@ const BUILD_FOLDER = {
 	FONTS: `fonts`,
 };
 
-const PATH = {
+const PATH =
+{
 	SRC_ROOT: SRC_FOLDER.SRC,
 	SRC_HTML: `${SRC_FOLDER.SRC}/${SRC_FOLDER.MARKUP}`,
 	SRC_CSS: `${SRC_FOLDER.SRC}/${SRC_FOLDER.CSS}`,
@@ -54,13 +57,15 @@ const PATH = {
 	BUILD_IMG: `${BUILD_FOLDER.BUILD}/${BUILD_FOLDER.IMG}`,
 };
 
-const copy = ( paths, base = PATH.SRC_ROOT ) =>
+const copy =
+( paths, base = PATH.SRC_ROOT ) =>
 {
 	return gulp.src( paths, {base, allowEmpty: true} )
 		.pipe( gulp.dest( PATH.BUILD_ROOT ) );
 };
 
-const minifyPictures = ( paths ) =>
+const minifyPictures =
+( paths ) =>
 {
 	return gulp.src( paths, {base: PATH.SRC_IMG} )
 		.pipe(
@@ -78,7 +83,8 @@ const minifyPictures = ( paths ) =>
 		.pipe( gulp.dest( PATH.BUILD_IMG ) );
 };
 
-const createSvgSprite = () =>
+const createSvgSprite =
+() =>
 {
 	return gulp.src( `${PATH.SRC_IMG}/**/*.svg` )
 		.pipe(
@@ -97,7 +103,8 @@ const createSvgSprite = () =>
 		.pipe( gulp.dest( PATH.BUILD_IMG ) );
 };
 
-const addNewSvg = ( path ) =>
+const addNewSvg =
+( path ) =>
 {
 	minifyPictures( [path] );
 	createSvgSprite();

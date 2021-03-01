@@ -4,19 +4,22 @@ const customClass =
 	NO_JS: `no-js`,
 };
 
-const getNextArrayIndex = ( currentIndex, arr ) =>
+const getNextArrayIndex =
+( currentIndex, arr ) =>
 {
 	/* eslint-disable-next-line space-in-parens*/
 	return (currentIndex + 1) % arr.length;
 };
 
-const getPreviousArrayIndex = ( currentIndex, arr ) =>
+const getPreviousArrayIndex =
+( currentIndex, arr ) =>
 {
 	/* eslint-disable-next-line space-in-parens*/
 	return (currentIndex + (arr.length - 1)) % arr.length;
 };
 
-const init = () =>
+const init =
+() =>
 {
 	const slider = document.querySelector( `body > main > section.slider` );
 	const buttonsWrapper = slider.querySelector( `.buttons-wrapper` );
@@ -25,7 +28,8 @@ const init = () =>
 	const slidesWrapper = slider.querySelector( `ul` );
 	const slides = Array.from( slidesWrapper.querySelectorAll( `li` ) );
 
-	const setActiveSlide = ( index ) =>
+	const setActiveSlide =
+	( index ) =>
 	{
 		if ( slides[index] )
 		{
@@ -35,7 +39,8 @@ const init = () =>
 		}
 	};
 	
-	const setButtonListener = ( button, getArrayIndex ) =>
+	const setButtonListener =
+	( button, getArrayIndex ) =>
 	{
 		button.addEventListener(
 			`click`,
