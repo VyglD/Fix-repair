@@ -144,18 +144,155 @@ body > main > section.banner > .video-wrapper video
 	right: 0;
 	bottom: 0;
 	left: 0;
+	z-index: 1;
 	
 	width: 100%;
 	height: 100%;
 }
 
-body > main > section.banner > .video-wrapper .play-button
+body > main > section.banner > .video-wrapper .controls-wrapper
+{
+	--control-padding: 10px;
+	
+	z-index: 2;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible
 {
 	position: absolute;
-	top: 30%;
+	bottom: 0;
+	left: 0;
+	
+	display: block;
+	
+	width: 100%;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar
+{
+	--line-padding: var(--control-padding);
+	
+	position: relative;
+	z-index: 2;
+	
+	width: 100%;
+	margin-bottom: calc(-1 * var(--line-padding));
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar:hover
+{
+	--line-height: 10px;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .control-buttons-wrapper
+{
+	display: flex;
+	align-items: center;
+	
+	box-sizing: border-box;
+	width: 100%;
+	
+	background-color: var(--color-black-3);
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) button:not(.play-button)
+{
+	display: none;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper .control-button
+{
+	position: relative;
+	z-index: 1;
+	
+	display: none;
+	flex-shrink: 0;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .control-button
+{
+	--icon-size: 25px;
+	--control-button-size: calc(var(--control-padding) * 2 + var(--icon-size));
+	
+	display: block;
+	overflow: hidden;
+	
+	box-sizing: border-box;
+	width: var(--control-button-size);
+	height: var(--control-button-size);
+	padding: calc((var(--control-button-size) - var(--icon-size)) / 2);
+	
+	font-size: 0;
+	
+	outline: none;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .control-button::before
+{
+	content: "";
+	
+	display: block;
+	
+	width: var(--icon-size);
+	height: var(--icon-size);
+	
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper .control-button:hover::before
+{
+	transform: scale(0.8);
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .control-button:focus:not(:hover)
+{
+	box-shadow: inset 0 0 0 2px var(--color-black-0);
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper .control-button:active
+{
+	opacity: 0.2;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .play-button::before
+{
+	background-image: url("../img/sprite.svg#play-icon");
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .pause-button::before
+{
+	background-image: url("../img/sprite.svg#pause-icon");
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .volume-button::before
+{
+	background-image: url("../img/sprite.svg#volume-icon");
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .volume-button.mute::before
+{
+	background-image: url("../img/sprite.svg#mute-icon");
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .speed-button::before
+{
+	background-image: url("../img/sprite.svg#speed-icon");
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .fullscreen-button::before
+{
+	background-image: url("../img/sprite.svg#fullscreen-icon");
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button
+{
+	position: absolute;
+	top: 50%;
 	left: 50%;
 	
-	margin: 1px 0 0 5px;
+	display: block;
+	margin: -32px 0 0 6px;
 	
 	font-size: 21px;
 	line-height: 30px;
@@ -164,20 +301,15 @@ body > main > section.banner > .video-wrapper .play-button
 	
 	outline: none;
 	
-	transform: translate(-50%);
+	transform: translate(-50%, -50%);
 }
 
-body > main > section.banner > .video-wrapper .play-button:focus:not(:hover)
+body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button:focus:not(:hover)
 {
 	text-decoration: underline;
 }
 
-body > main > section.banner > .video-wrapper .play-button:active
-{
-	opacity: 0.2;
-}
-
-body > main > section.banner > .video-wrapper .play-button::before
+body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button::before
 {
 	--icon-button-size: 256px;
 	
@@ -187,11 +319,111 @@ body > main > section.banner > .video-wrapper .play-button::before
 	
 	width: var(--icon-button-size);
 	height: var(--icon-button-size);
-	margin: 0 4px 18px 0;
+	margin: 0 7px 18px 0;
 	
 	background-image: url("../img/sprite.svg#play");
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+body > main > section.banner > .video-wrapper .volume-wrapper
+{
+	display: flex;
+	align-items: center;
+}
+
+body > main > section.banner > .video-wrapper .volume-wrapper .volume-range
+{
+	--line-progress: 100%;
+	
+	visibility: hidden;
+	
+	width: 0;
+	
+	transition: width 0.5s;
+}
+
+body > main > section.banner > .video-wrapper .volume-wrapper:hover .volume-range,
+body > main > section.banner > .video-wrapper .volume-wrapper:focus-within .volume-range
+{
+	visibility: visible;
+	
+	width: 50px;
+}
+
+body > main > section.banner > .video-wrapper .volume-range
+{
+	--line-padding: 5px;
+	
+	width: 50px;
+}
+
+body > main > section.banner > .video-wrapper .volume-range > button
+{
+	--line-height: 8px;
+}
+
+body > main > section.banner > .video-wrapper .time-wrapper
+{
+	--font-size: 16px;
+	
+	flex-shrink: 0;
+	padding: 0 var(--control-padding);
+	
+	font-size: var(--font-size);
+	line-height: var(--font-size);
+	
+	color: var(--color-white-0);
+}
+
+body > main > section.banner > .video-wrapper .speed-wrapper
+{
+	position: relative;
+	z-index: 3;
+	
+	margin-left: auto;
+}
+
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list
+{
+	position: absolute;
+	bottom: 100%;
+	z-index: 1;
+	
+	display: none;
+	
+	width: 100%;
+	
+	background-color: var(--color-black-3);
+}
+
+body > main > section.banner > .video-wrapper .speed-wrapper:focus-within .speed-list,
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list.visible
+{
+	display: block;
+}
+
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button
+{
+	width: 100%;
+	
+	text-align: center;
+	
+	background-color: transparent;
+	
+	outline: none;
+}
+
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button.checked
+{
+	color: var(--color-white-0);
+}
+
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button:hover,
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button:focus
+{
+	color: var(--color-black-0);
+	background-color: var(--color-gray-1);
 }
 
 @media (max-height: 650px)
@@ -218,12 +450,12 @@ body > main > section.banner > .video-wrapper .play-button::before
 		margin: 30px auto 0 0;
 	}
 	
-	body > main > section.banner > .video-wrapper .play-button
+	body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button
 	{
-		top: 40%;
+		margin: 0;
 	}
 	
-	body > main > section.banner > .video-wrapper .play-button::before
+	body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button::before
 	{
 		--icon-button-size: 125px;
 		
@@ -250,14 +482,12 @@ body > main > section.banner > .video-wrapper .play-button::before
 		margin: 20px 0 0;
 	}
 	
-	body > main > section.banner > .video-wrapper .play-button
+	body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button
 	{
-		top: 40%;
-		
-		margin: 0 auto;
+		margin: 0;
 	}
 	
-	body > main > section.banner > .video-wrapper .play-button::before
+	body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button::before
 	{
 		--icon-button-size: 125px;
 		
@@ -345,15 +575,25 @@ body > main > section.banner > .video-wrapper .play-button::before
 		line-height: 16px;
 	}
 	
-	body > main > section.banner > .video-wrapper .play-button
+	body > main > section.banner > .video-wrapper .controls-wrapper
 	{
-		top: 33%;
+		--control-padding: 5px;
+	}
+	
+	body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button
+	{
+		margin: 0;
 		
 		font-size: 16px;
 	}
 	
-	body > main > section.banner > .video-wrapper .play-button::before
+	body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .play-button::before
 	{
 		--icon-button-size: 90px;
+	}
+	
+	body > main > section.banner > .video-wrapper .time-wrapper
+	{
+		--font-size: 12px;
 	}
 }

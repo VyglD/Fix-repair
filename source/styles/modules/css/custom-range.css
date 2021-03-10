@@ -1,0 +1,76 @@
+div[data-type="custom-range"]
+{
+	--line-height: 4px;
+	--line-padding: 10px;
+	--line-progress: 0%;
+	
+	position: relative;
+	
+	display: flex;
+	align-items: center;
+	
+	width: 100%;
+	padding: var(--line-padding) 0;
+}
+
+div[data-type="custom-range"]::before,
+div[data-type="custom-range"]::after
+{
+	content: "";
+	
+	position: relative;
+	z-index: 1;
+	
+	display: block;
+	
+	width: 100%;
+	height: var(--line-height);
+}
+
+div[data-type="custom-range"]::before
+{
+	width: var(--line-progress);
+	
+	background-color: var(--color-orange-0);
+}
+
+div[data-type="custom-range"]::after
+{
+	width: calc(100% - var(--line-progress));
+	
+	background-color: var(--color-white-0);
+}
+
+div[data-type="custom-range"] > button
+{
+	position: relative;
+	z-index: 2;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	flex-shrink: 0;
+	width: var(--line-height);
+	height: var(--line-height);
+	
+	background-color: var(--color-orange-0);
+	
+	border-radius: 50%;
+	outline: none;
+	box-shadow:
+		inset 0 0 0 1px var(--color-black-0),
+		0 0 0 1px var(--color-black-0);
+}
+
+div[data-type="custom-range"] > button:hover,
+div[data-type="custom-range"] > button:focus
+{
+	box-shadow: 0 0 0 3px var(--color-black-0);
+}
+
+div[data-type="custom-range"] > button:active
+{
+	opacity: 0.8;
+	box-shadow: 0 0 0 3px var(--color-gray-2);
+}

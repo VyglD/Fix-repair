@@ -1,6 +1,7 @@
 import {getToast} from "./modules/toast";
 import {init as initFeedback} from "./modules/feedback";
 import {init as initSlider} from "./modules/slider";
+import {init as initVideoControls} from "./modules/video-controls";
 
 const toast = getToast();
 
@@ -42,6 +43,7 @@ const animate =
 
 initSlider();
 initFeedback( toast );
+initVideoControls();
 
 document.querySelectorAll( `[data-blank-status]` )
 	.forEach(
