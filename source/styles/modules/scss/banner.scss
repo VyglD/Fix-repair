@@ -125,6 +125,8 @@ body > main > section.banner > .video-wrapper
 	max-height: 100%;
 	margin: auto 0;
 	
+	user-select: none;
+	
 	background-color: var(--color-gray-1);
 }
 
@@ -179,7 +181,8 @@ body > main > section.banner > .video-wrapper .controls-wrapper.visible .progres
 	margin-bottom: calc(-1 * var(--line-padding));
 }
 
-body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar:hover
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar:hover,
+body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar.visible
 {
 	--line-height: 10px;
 }
@@ -344,7 +347,8 @@ body > main > section.banner > .video-wrapper .volume-wrapper .volume-range
 }
 
 body > main > section.banner > .video-wrapper .volume-wrapper:hover .volume-range,
-body > main > section.banner > .video-wrapper .volume-wrapper:focus-within .volume-range
+body > main > section.banner > .video-wrapper .volume-wrapper:focus-within .volume-range,
+body > main > section.banner > .video-wrapper .volume-wrapper .volume-range.visible
 {
 	visibility: visible;
 	
@@ -397,7 +401,6 @@ body > main > section.banner > .video-wrapper .speed-wrapper .speed-list
 	background-color: var(--color-black-3);
 }
 
-body > main > section.banner > .video-wrapper .speed-wrapper:focus-within .speed-list,
 body > main > section.banner > .video-wrapper .speed-wrapper .speed-list.visible
 {
 	display: block;
@@ -409,14 +412,15 @@ body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button
 	
 	text-align: center;
 	
+	color: var(--color-white-0);
 	background-color: transparent;
 	
 	outline: none;
 }
 
-body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button.checked
+body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button.selected
 {
-	color: var(--color-white-0);
+	color: var(--color-orange-0);
 }
 
 body > main > section.banner > .video-wrapper .speed-wrapper .speed-list button:hover,
