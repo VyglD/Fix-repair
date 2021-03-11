@@ -53,8 +53,9 @@ body > main > section.banner > .content-wrapper .action-button-wrapper
 	justify-content: center;
 	align-items: flex-start;
 	
-	padding: 0 10px 0 3px;
-	margin: 43px auto 68px 0;
+	padding: 10px;
+	padding-left: 3px;
+	margin: 33px auto 58px 0;
 }
 
 body > main > section.banner > .content-wrapper .action-button
@@ -170,6 +171,11 @@ body > main > section.banner > .video-wrapper .controls-wrapper.visible
 	width: 100%;
 }
 
+body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .progress-bar
+{
+	display: none;
+}
+
 body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar
 {
 	--line-padding: var(--control-padding);
@@ -185,6 +191,11 @@ body > main > section.banner > .video-wrapper .controls-wrapper.visible .progres
 body > main > section.banner > .video-wrapper .controls-wrapper.visible .progress-bar.visible
 {
 	--line-height: 10px;
+}
+
+body > main > section.banner > .video-wrapper .controls-wrapper:not(.visible) .control-buttons-wrapper *
+{
+	display: none;
 }
 
 body > main > section.banner > .video-wrapper .controls-wrapper.visible .control-buttons-wrapper

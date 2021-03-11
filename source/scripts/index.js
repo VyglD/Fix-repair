@@ -10,7 +10,7 @@ const showBlankMessage =
 {
 	evt.preventDefault();
 	
-	toast.info( `Данная страница отсуствует` );
+	toast.info( `Данная страница отсутствует` );
 };
 
 const animate =

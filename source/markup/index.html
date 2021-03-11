@@ -18,6 +18,20 @@
 		href="img/favicon.ico"
 		type="image/x-icon"
 	/>
+	<link
+		rel="preload"
+		href="fonts/MullerRegular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
+	<link
+		rel="preload"
+		href="fonts/MullerMedium.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
 </head>
 <body>
 	
@@ -189,51 +203,53 @@
 			</div>
 		</section>
 		<section class="feedback" id="feedback">
-			<h2>Узнайте о запуске сервиса первым</h2>
-			<p class="success">
-				Спасибо! Мы будем держать вас в курсе обновлений
-			</p>
 			<div class="content-wrapper">
-				<p class="subtitle">
-					Первым 10 клиентам стальная входная дверь в подарок
+				<h2>Узнайте о запуске сервиса первым</h2>
+				<p class="success">
+					Спасибо! Мы будем держать вас в курсе обновлений
 				</p>
-				<form action="https://echo.htmlacademy.ru/" method="post">
-					<input
-						type="text"
-						name="name"
-						id="feedback-input-name"
-						placeholder="Имя и фамилия*"
-						required
-					/>
-					<label for="feedback-input-name">Имя и фамилия*</label>
-					<input 
-						type="email"
-						name="email"
-						id="feedback-input-email"
-						placeholder="Е-mail адрес*"
-						required
-					/>
-					<label for="feedback-input-email">Е-mail адрес*</label>
-					<input
-						type="tel"
-						name="phone"
-						id="feedback-input-phone"
-						placeholder="Телефон"
-					/>
-					<label for="feedback-input-phone">Телефон</label>
-					<button class="action-button" type="submit">
-						Подписаться
-					</button>
-				</form>
-				<p class="elucidation">* Обязательные для заполнения поля</p>
-				<a
-					class="policy"
-					href="#blank"
-					title="Открыть политику конфиденциальности"
-					data-blank-status
-				>
-					Политика конфиденциальности
-				</a>
+				<div class="content-wrapper">
+					<p class="subtitle">
+						Первым 10 клиентам стальная входная дверь в подарок
+					</p>
+					<form action="https://echo.htmlacademy.ru/" method="post">
+						<input
+							type="text"
+							name="name"
+							id="feedback-input-name"
+							placeholder="Имя и фамилия*"
+							required
+						/>
+						<label for="feedback-input-name">Имя и фамилия*</label>
+						<input
+							type="email"
+							name="email"
+							id="feedback-input-email"
+							placeholder="Е-mail адрес*"
+							required
+						/>
+						<label for="feedback-input-email">Е-mail адрес*</label>
+						<input
+							type="tel"
+							name="phone"
+							id="feedback-input-phone"
+							placeholder="Телефон"
+						/>
+						<label for="feedback-input-phone">Телефон</label>
+						<button class="action-button" type="submit">
+							Подписаться
+						</button>
+					</form>
+					<p class="elucidation">* Обязательные для заполнения поля</p>
+					<a
+						class="policy"
+						href="#blank"
+						title="Открыть политику конфиденциальности"
+						data-blank-status
+					>
+						Политика конфиденциальности
+					</a>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -286,7 +302,7 @@
 				<span>Ул. Галерная, д 55,</span>
 				Санкт-Петербург
 			</p>
-			<a 
+			<a
 				class="email"
 				href="mailto:9035445@gmail.com"
 				title="Напишите нам"
@@ -301,7 +317,7 @@
 		<div class="timer"></div>
 		<button type="button" aria-label="Закрыть"></button>
 	</div>
-	<script  src="js/app.min.js"></script>
+	<script src="js/app.min.js"></script>
 	
 </body>
 </html>

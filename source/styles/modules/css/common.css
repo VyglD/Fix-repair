@@ -103,6 +103,12 @@ video
 	max-height: 100%;
 }
 
+/*
+
+	Classes
+
+*/
+
 .visually-hidden:not(:focus):not(:active),
 input[type="range"].visually-hidden,
 input[type="checkbox"].visually-hidden,
